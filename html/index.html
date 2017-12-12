@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Page Description">
+        <meta name="author" content="lengkeng">
+        <title>Auto spam</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../node_modules/material-design-icons-iconfont/dist/material-design-icons.css">
+        <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css">
+        <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body ng-app="HRUssh">
+        <md-toolbar class="md-hue-2">
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+                    <i class="material-icons">reorder</i>
+                </md-button>
+
+                <h2 flex md-truncate>HR-USSH Auto Spam </h2>
+            </div>
+        </md-toolbar>
+        <br>
+        <div class="container" ng-controller="main" ng-cloak>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="row">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+                                <div class="row">
+
+                                    <div class="col-sm-12">
+                                        <md-subheader class="md-no-sticky">
+                                            <i class="fa fa-fw fa-group"></i>GROUPS (total: {{groups.length}})
+                                            <input type="text" placeholder="Search.." class="pull-right search" ng-model="search">
+                                        </md-subheader>
+                                    </div>
+                                    <div class="col-sm-12 groups">
+                                        <md-divider></md-divider>
+
+                                        <md-list-item ng-repeat="group in groups | filter:search">
+                                            <md-checkbox ng-model="group.checked"></md-checkbox>
+                                            <p>{{group.name}}</p>
+                                        </md-list-item>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="row">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-12 content">
+                                        <md-subheader class="md-no-sticky">
+                                            <i class="fa fa-fw fa-facebook-f"></i>POST CONTENT
+                                        </md-subheader>
+                                        <form action="" name="form"></form>
+                                        <h4><i class="fa fa-newspaper-o"></i> Content</h4>
+                                        <md-input-container class="md-block">
+                                            <textarea ng-model="user.message" name="message"
+                                                      rows="10" required
+                                                      md-select-on-focus aria-label="conmessagetent"></textarea>
+                                            <div ng-messages="form.message.$error" role="alert">
+                                                <div ng-message="required" class="my-message">Content can not be empty.</div>
+                                            </div>
+                                        </md-input-container>
+                                        <h4><i class="fa fa-camera"></i> Image</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12" layout="row" layout-align="center">
+                            <md-button class="md-raised md-primary btn-start" ng-click="autoSpam()">Start</md-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/angular/angular.min.js"></script>
+        <script src="../node_modules/angular-aria/angular-aria.js"></script>
+        <script src="../node_modules/angular-animate/angular-animate.js"></script>
+        <script src="../node_modules/angular-material/angular-material.js"></script>
+        <script src="../js/index.js"></script>
+        <script src="../js/controllers/mainController.js"></script>
+    </body>
+</html>

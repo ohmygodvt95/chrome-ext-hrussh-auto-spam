@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "FB - Auto spam group",
+  "description": "This extension allows the user auto spam in group",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "html/popup.html",
+    "default_title": "Seach and export FB group data!"
+  },
+  "icons": {
+    "16": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "https://www.facebook.com/bookmarks/groups/"
+  ],
+  "content_security_policy": "script-src 'self' https://connect.facebook.net; object-src 'self'"
+}

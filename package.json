@@ -1,0 +1,22 @@
+{
+  "name": "chrome-ext-auto-spam",
+  "version": "1.0.0",
+  "description": "This extension allows the user auto spam in group",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ohmygodvt95@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.6.7",
+    "angular-animate": "^1.6.7",
+    "angular-aria": "^1.6.7",
+    "angular-material": "^1.1.5",
+    "angular-messages": "^1.6.7",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "material-design-icons-iconfont": "^3.0.3"
+  }
+}

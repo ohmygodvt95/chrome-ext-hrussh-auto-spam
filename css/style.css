@@ -1,0 +1,24 @@
+.groups {
+    height: 78vh!important;
+    overflow-y: auto;
+}
+
+.search {
+    transition: 0.25s;
+    margin-top: -5px;
+    width: 125px;
+}
+
+.search:focus {
+    width: 200px;
+}
+
+.content {
+    height: 65vh!important;
+    overflow-y: auto;
+}
+
+.btn-start {
+    font-size: 30px;
+    padding: 25px 100px;
+}
